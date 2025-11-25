@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYC Landmarks Virtual Tour</title>
+    <style>
+        :root {
+            --primary-color: #ff0099;
+            --secondary-color: #ffb6c1;
+
+            --bg-color: #ccff66;
+
+            --card-bg: #ffffff;
+            --text-main: #444444;
+            --text-light: #888888;
+
+
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 2rem;
+            --space-xl: 4rem;
+
+            --font-body: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+            --shadow-card: 0 4px 12px -2px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        img,
+        video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+
+        h1,
+        h2,
+        h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: var(--space-md);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: var(--space-xl);
+            margin-bottom: var(--space-md);
+            border-bottom: 4px solid var(--primary-color);
+            display: inline-block;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            margin-bottom: var(--space-sm);
+        }
+
+        p {
+            margin-bottom: var(--space-md);
+            max-width: 70ch;
+        }
+
+        .intro {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            opacity: 1;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: var(--space-md) var(--space-lg);
+            box-shadow: var(--shadow-card);
+        }
+
+        .site-title {
+            font-weight: bold;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--space-lg);
+        }
+
+        .videoWrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            /* 16:9 */
+            height: 0;
+            background-color: #000;
+            border-radius: 16px;
+            /* Softer corners */
+            overflow: hidden;
+            margin-bottom: var(--space-lg);
+            box-shadow: var(--shadow-card);
+        }
+
+        .videoWrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .featured-content {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: var(--space-lg);
+            border-radius: 16px;
+            box-shadow: var(--shadow-card);
+            margin-bottom: var(--space-xl);
+            border: 3px solid var(--secondary-color);
+        }
+
+        .featured-content img {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: var(--space-md);
+        }
+
+
+        .landmarks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-lg);
+        }
+
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border: 3px solid var(--secondary-color);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 20px -5px rgba(255, 0, 153, 0.3);
+            border-color: var(--primary-color);
+        }
+
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: var(--space-md);
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-content h3 {
+            margin-top: 0;
+        }
+
+        .card-content p {
+            margin-bottom: 0;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: auto;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: var(--secondary-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: var(--space-lg);
+            margin-top: var(--space-xl);
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="site-title">NYC Landmarks</div>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h1>Wonder Wheel</h1>
+            <p class="tagline">A century-old Ferris wheel that still lights up the Coney Island skyline.</p>
+            <p>Rising above the boardwalk since 1920, the Wonder Wheel is one of New York City’s most beloved seaside
+                icons offering sweeping views of the Atlantic and the vibrant energy of Coney Island.</p>
+            <figure class="hero">
+                <img src="images/pexels-kelsey-caroline-774981359-19122990.jpg"
+                    alt="Wonder Wheel entrance on a cloudless sunny day">
+                <figcaption><a href="https://www.pexels.com/photo/ferris-wheel-in-amusement-park-19122990/">Photo by
+                        Kelsey Caroline</a></figcaption>
+            </figure>
+
+        </section>
+        <section class="about">
+            <h2>About</h2>
+            <p><strong>Built:</strong> The Wonder Wheel was built in 1920 by the Eccentric Ferris Wheel Company and has
+                operated continuously ever since. It became a New York City Landmark in 1989 and is still family-run by
+                the Vourderis family as part of Deno’s Wonder Wheel Amusement Park.</p>
+            <p><strong>Today:</strong> it remains a centerpiece of <a href="https://www.denoswonderwheel.com/"
+                    target="_blank" rel="noopener">Deno’s Wonder Wheel Amusement Park</a>,
+                open seasonally from spring through fall. It features 24 passenger cars—some fixed, some sliding—and
+                provides views of the ocean, beach, and surrounding amusement district.</p>
+
+            <h3>More Info</h3>
+            <ul>
+                <li> <a href="https://en.wikipedia.org/wiki/Wonder_Wheel" target="_blank" rel="noopener">Wikipedia:
+                        Wonder Wheel</a> </li>
+                <li><a href="https://www.nycgovparks.org/parks/coney-island-beach-and-boardwalk/history" target="_blank"
+                        rel="noopener">NYC Parks – Coney Island</a></li>
+            </ul>
+            <div class="images-grid">
+                <figure>
+                    <img src="images/square/pexels-kyle-miller-169884138-27462439_sq.jpg"
+                        alt="A man walking away from the wonder wheel which is in full view.">
+                    <figcaption><a href="https://www.pexels.com/photo/a-man-walking-past-a-ferris-wheel-27462439/">Photo
+                            by Kyle Miller</a></figcaption>
+                </figure>
+                <figure>
+                    <img src="images/square/wpexels-clement-proust-363898785-24730360_sq.jpg"
+                        alt="Wonder wheel at sunset">
+                    <figcaption><a href="images/square/pexels-clement-proust-363898785-24730360_sq.jpg">
+                           Photo by Clément Proust</a></figcaption>
+                </figure>
+                <figure>
+                    <img src="images/square/pexels-dimitry-mak-1310041547-30911091_sq.jpg"
+                        alt="Night view of the Wonder Wheel lit with neon">
+                    <figcaption><a
+                            href="https://www.pexels.com/photo/colorful-summer-day-at-coney-island-amusement-park-30911091/">Photo
+                            by Dimitry Mak</a></figcaption>
+                </figure>
+
+            </div>
+        </section>
+
+        <nav id="pagination" aria-label="Landmark pagination">
+            <a class="btn" rel="prev" href="landmark-tram.html">← Previous</a>
+            <a class="btn" rel="next" href="landmark-liberty.html">Next →</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>Site by Pryce Sheffield</p>
+    </footer>
+</body>
+
+</html>

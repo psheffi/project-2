@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empire State Building — NYC Landmarks Virtual Tour</title>
+    <style>
+        :root {
+            --primary-color: #ff0099;
+            --secondary-color: #ffb6c1;
+
+            --bg-color: #ccff66;
+
+            --card-bg: #ffffff;
+            --text-main: #444444;
+            --text-light: #888888;
+
+
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 2rem;
+            --space-xl: 4rem;
+
+            --font-body: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+            --shadow-card: 0 4px 12px -2px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        img,
+        video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+
+        h1,
+        h2,
+        h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            line-height: 1.2;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+    .site-title { padding:.75rem; }
+
+        main { padding: var(--space-lg); max-width: 900px; margin: 0 auto; }
+
+    nav#pagination { display:flex; justify-content:space-between; gap:1rem; margin-top:2rem }
+
+        a.button { background:var(--card-bg); padding: .5rem 1rem; border-radius:6px; text-decoration:none; color:var(--text-main); box-shadow:var(--shadow-card)}
+        footer { padding: 1rem; text-align: center; }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="site-title">NYC Landmarks</div>
+    </header>
+
+    <main class="landmark-page">
+        <section class="intro">
+            <h1>Empire State Building</h1>
+            <p>The Empire State Building is an Art Deco skyscraper in Midtown Manhattan that once held the title of world’s tallest building.</p>
+        </section>
+
+        <section class="about">
+            <h2>About</h2>
+            <p><strong>Built:</strong> Constructed in a record 1 year and 45 days from 1930–1931, the 102-story tower was designed by the firm Shreve, Lamb & Harmon Associates and opened on May 1, 1931 with President Hoover pressing a button in Washington, D.C. that turned on the lights and opened the building.</p>
+            <p><strong>Today:</strong> Its history, iconic silhouette, and observation decks make it a global tourist destination, and official city and national landmark. Millions of people visit it every year.</p>
+
+            <h3>More Info:</h3>
+            <ul>
+                <li><a href="https://www.esbnyc.com/about/history">Empire State Building official website</a></li>
+                <li><a href="https://www.esbnyc.com/visit">Visitor info tickets and directions</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Empire_State_Building">Wikipedia: Empire State Building</a></li>
+            </ul>
+        </section>
+
+        <nav id="pagination" aria-label="Landmark pagination">
+            <a class="button" href="landmark-wonder.html">&larr; Previous</a>
+            <a class="button" href="landmark-ferry.html">Next &rarr;</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>Site by Pryce Sheffield</p>
+    </footer>
+</body>
+
+</html>
